@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
-<div class="container">
+<div class="container mx-auto">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Типо дом') }}</div>
+                <div class="mt-6 text-3xl font-medium">{{ __('Ваш профиль') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,9 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('Молодец залогинился!') }}
-                     <!-- Добавьте кнопку или ссылку для перехода на страницу создания видео -->
-                     <a href="{{ route('videos.create') }}" class="btn btn-primary mt-3">Создать видос</a>
+                     <a href="{{ route('videos.create') }}" class="px-12 bg-blue-500 text-white py-2 rounded-lg mt-12 block max-w-52 text-center">Создать видео</a>
                 </div>
             </div>
         </div>

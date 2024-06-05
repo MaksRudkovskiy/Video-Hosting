@@ -26,10 +26,6 @@
                 </div>
                 
             @endforeach
-            @if(Auth::check())
-                <a href="{{ route('videos.create') }}" class="btn btn-primary mt-3">Создать видос</a>
-                <a href="{{ route('home') }}" class="btn btn-primary mt-3">профиль</a>
-            @endif
         </div>
     </div>
 </div>

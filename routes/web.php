@@ -4,11 +4,12 @@ use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
 Auth::routes();
 
 Route::get('/videos/create', [VideoController::class, 'create'])->name('videos.create');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
 
 // Маршруты для администратора
 Route::middleware(['auth', 'admin'])->group(function () {
