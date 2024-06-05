@@ -8,7 +8,7 @@
             @foreach ($videos as $video)
                 <div class="bg-white shadow-md rounded-lg overflow-hidden">
                     <video class="w-full" controls>
-                        <source src="{{ asset('storage/' . $video->video_path) }}" type="video/mp4">
+                        <source src="{{ asset($video->video_path) }}" type="video/mp4">
                     </video>
                     <div class="p-4">
                         <h3 class="text-xl font-semibold">{{ $video->title }}</h3>

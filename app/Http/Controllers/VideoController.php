@@ -58,20 +58,23 @@ public function dislikes(Video $video)
             'video' => 'required|mimes:mp4|max:102400',
         ]);
 
-        $path = $request->file('video')->store('videos');
+        $name = time(). "." . $request->video->extension();
+        $destination = 'public/';
+        $path = $request->video->storeAs($destination, $name);
 
         Video::create([
             'user_id' => Auth::id(),
             'title' => $request->title,
             'description' => $request->description,
             'category' => $request->category,
-            'video_path' => $path,
+            'video_path' => 'storage/' . $name,
             'likes' => 0,
             'dislikes' => 0,
         ]);
 
         return redirect()->route('home');
     }
+
 
     public function adminIndex()
     {
